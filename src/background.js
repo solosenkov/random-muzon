@@ -5,8 +5,8 @@ chrome.action.onClicked.addListener(() => {
     chrome.windows.create({
       url: 'player.html',
       type: 'popup',
-      width: 360,
-      height: 260,
+      width: 380,
+      height: 500,
       focused: true
     }, (window) => {
       playerWindowId = window.id;

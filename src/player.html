@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <style>
     body {
-      width: 320px;
-      height: 220px;
+      width: 360px;
+      height: 460px;
       padding: 20px;
       background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
       color: white;
@@ -22,12 +22,12 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 30px;
+      height: 40px;
       background: rgba(0, 0, 0, 0.2);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0 10px;
+      padding: 0 15px;
     }
 
     .title {
@@ -36,8 +36,8 @@
     }
 
     .close-button {
-      width: 20px;
-      height: 20px;
+      width: 24px;
+      height: 24px;
       border-radius: 50%;
       background: #ff5f57;
       border: none;
@@ -46,7 +46,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 14px;
+      font-size: 16px;
       color: #800;
       transition: all 0.3s ease;
     }
@@ -57,26 +57,31 @@
     }
 
     .player-container {
-      margin-top: 40px;
+      margin-top: 50px;
       background: rgba(255, 255, 255, 0.05);
       border-radius: 16px;
-      padding: 20px;
+      padding: 25px;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
       backdrop-filter: blur(10px);
       -webkit-app-region: no-drag;
+      height: calc(100% - 90px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .player-controls {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 20px;
+      gap: 30px;
       margin: 20px 0;
+      padding: 20px 0;
     }
 
     .control-button {
-      width: 48px;
-      height: 48px;
+      width: 54px;
+      height: 54px;
       border: none;
       background: transparent;
       cursor: pointer;
@@ -103,7 +108,7 @@
     #track-info {
       text-align: center;
       margin: 15px 0;
-      padding: 15px;
+      padding: 20px;
       background: rgba(255, 255, 255, 0.05);
       border-radius: 12px;
       position: relative;
@@ -111,9 +116,9 @@
     }
 
     #track-name {
-      font-size: 16px;
+      font-size: 18px;
       font-weight: bold;
-      margin: 5px 0;
+      margin: 5px 0 10px 0;
       color: #fff;
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
       white-space: nowrap;
@@ -124,14 +129,14 @@
     #artist-name {
       font-size: 14px;
       color: rgba(255, 255, 255, 0.7);
-      margin: 5px 0;
+      margin: 5px 0 15px 0;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
 
     .progress-container {
-      margin-top: 15px;
+      margin: 20px 0;
     }
 
     .progress-bar {
