@@ -5,7 +5,7 @@
   <style>
     body {
       width: 360px;
-      height: 460px;
+      height: 520px;
       padding: 20px;
       background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
       color: white;
@@ -164,6 +164,92 @@
       color: rgba(255, 255, 255, 0.6);
       margin-top: 8px;
     }
+
+    .search-container {
+      margin-top: 50px;
+      margin-bottom: 10px;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 8px 12px;
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 14px;
+      outline: none;
+      -webkit-app-region: no-drag;
+    }
+
+    .search-input::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .search-results {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.9);
+      border-radius: 8px;
+      margin-top: 4px;
+      max-height: 200px;
+      overflow-y: auto;
+      z-index: 1000;
+      -webkit-app-region: no-drag;
+    }
+
+    .search-result-item {
+      padding: 8px 12px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .search-result-item:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .filters-container {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+      -webkit-app-region: no-drag;
+    }
+
+    .filter-tag {
+      padding: 4px 12px;
+      border-radius: 16px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .filter-tag:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .filter-tag.active {
+      background: #4CAF50;
+    }
+
+    .clear-filters {
+      padding: 4px 12px;
+      border-radius: 16px;
+      font-size: 12px;
+      cursor: pointer;
+      background: rgba(255, 0, 0, 0.3);
+      border: none;
+      color: white;
+      transition: all 0.2s;
+    }
+
+    .clear-filters:hover {
+      background: rgba(255, 0, 0, 0.4);
+    }
   </style>
 </head>
 <body>
@@ -171,6 +257,19 @@
     <div class="title">Random Muzon</div>
     <button class="close-button" id="close-btn">×</button>
   </div>
+
+  <div class="search-container">
+    <input type="text" class="search-input" placeholder="Поиск по исполнителю или названию..." id="search-input">
+    <div class="search-results" id="search-results" style="display: none;"></div>
+  </div>
+
+  <div class="filters-container">
+    <div class="filter-tag" data-genre="rock">рок</div>
+    <div class="filter-tag" data-genre="dnb">ДрамНбэйс</div>
+    <div class="filter-tag" data-genre="phonk">фонк</div>
+    <button class="clear-filters" id="clear-filters">Сбросить</button>
+  </div>
+
   <div class="player-container">
     <div id="track-info">
       <p id="track-name">Готов к воспроизведению</p>
