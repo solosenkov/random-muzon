@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Random Muzon",
+  "version": "1.0",
+  "description": "Слушайте случайную музыку из Jamendo",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://api.jamendo.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "assets/play-icon.png"
+    }
+  },
+  "icons": {
+    "48": "assets/play-icon.png"
+  }
+}
