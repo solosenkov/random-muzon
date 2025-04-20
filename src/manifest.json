@@ -5,13 +5,17 @@
   "description": "Слушайте случайную музыку из Jamendo",
   "permissions": [
     "storage",
-    "activeTab"
+    "background",
+    "windows",
+    "tabs"
   ],
   "host_permissions": [
     "https://api.jamendo.com/*"
   ],
+  "background": {
+    "service_worker": "background.js"
+  },
   "action": {
-    "default_popup": "popup.html",
     "default_icon": {
       "48": "assets/play-icon.png"
     }

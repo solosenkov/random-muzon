@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
             player.artistNameElement.textContent = '';
             const track = await trackProvider.getRandomTrack();
             player.loadTrack(track);
-            player.play();
         } catch (error) {
             console.error('Ошибка:', error);
             player.trackNameElement.textContent = 'Ошибка загрузки трека';
@@ -32,5 +31,43 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('next').addEventListener('click', () => {
         player.stop();
         loadAndPlayTrack();
+    });
+
+    // Обработчик закрытия окна
+    document.getElementById('close-btn').addEventListener('click', () => {
+        window.close();
+    });
+
+    // Добавляем возможность перетаскивания окна
+    const titleBar = document.querySelector('.title-bar');
+    let isDragging = false;
+    let currentX;
+    let currentY;
+    let initialX;
+    let initialY;
+
+    titleBar.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        initialX = e.clientX;
+        initialY = e.clientY;
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+
+        currentX = e.clientX - initialX;
+        currentY = e.clientY - initialY;
+
+        window.moveTo(
+            window.screenX + currentX,
+            window.screenY + currentY
+        );
+
+        initialX = e.clientX;
+        initialY = e.clientY;
+    });
+
+    document.addEventListener('mouseup', () => {
+        isDragging = false;
     });
 });
